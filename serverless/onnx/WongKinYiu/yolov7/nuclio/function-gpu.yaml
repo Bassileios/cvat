@@ -100,6 +100,8 @@ spec:
 
     directives:
       preCopy:
+        - kind: ENV
+          value: PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}"
         - kind: USER
           value: root
         - kind: RUN
@@ -107,7 +109,7 @@ spec:
         - kind: WORKDIR
           value: /opt/nuclio
         - kind: RUN
-          value: pip install onnxruntime
+          value: pip install onnxruntime-gpu
         - kind: WORKDIR
           value: /opt/nuclio
         - kind: RUN
